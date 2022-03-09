@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class UserStore {
   users = [];
+  page = 1;
 
   constructor() {
     makeAutoObservable(this);
@@ -9,6 +10,7 @@ class UserStore {
 
   addUsers(users) {
     this.users = [...this.users, ...users];
+    this.page += 1;
   }
 }
 
